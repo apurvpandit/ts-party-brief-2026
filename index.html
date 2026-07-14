@@ -26,7 +26,7 @@
     border-bottom:1px solid var(--line);
   }
   header h1{font-size:1.05rem; margin:0 0 2px; font-weight:700;}
-  header .sub{font-size:.78rem; color:var(--ink-soft); margin:0 0 10px;}
+  header .sub{font-size:.8rem; color:var(--ink-soft); margin:0 0 10px;}
 
   .searchbar{position:relative;}
   .searchbar input{
@@ -51,23 +51,29 @@
   .card.t1{border-left-color:var(--tier1);}
   .card.t2{border-left-color:var(--gold);}
   .card.flag{border-left-color:var(--flag-line); background:var(--flag-bg);}
-  .card .top{display:flex; justify-content:space-between; align-items:baseline; gap:8px;}
-  .card .name{font-weight:700; font-size:1rem;}
+  .card .top{display:flex; justify-content:space-between; align-items:flex-start; gap:8px;}
+  .card .name{font-weight:700; font-size:1.05rem;}
+  .card .emoji{margin-right:4px;}
   .card .badge{
-    font-size:.62rem; font-weight:800; text-transform:uppercase; letter-spacing:.04em;
-    padding:2px 7px; border-radius:10px; white-space:nowrap; flex-shrink:0;
+    font-size:.6rem; font-weight:800; text-transform:uppercase; letter-spacing:.03em;
+    padding:3px 8px; border-radius:10px; white-space:nowrap; flex-shrink:0; margin-top:2px;
   }
   .card.t1 .badge{background:var(--tier1); color:#fff;}
   .card.t2 .badge{background:var(--gold); color:#fff;}
   .card.t3 .badge{background:var(--tier3); color:#fff;}
   .card.flag .badge{background:var(--flag-line); color:#fff;}
-  .card .role{font-size:.82rem; color:var(--ink-soft); margin-top:2px;}
-  .card .hook{font-size:.92rem; margin-top:7px;}
-  .card .hook::before{content:"→ "; color:var(--accent); font-weight:700;}
+  .card .role{font-size:.88rem; color:var(--ink-soft); margin-top:4px;}
+  .card .hook{font-size:.94rem; margin-top:8px;}
+  .card .hook::before{content:"💬 "; }
   .card.hidden{display:none;}
 
   .empty{text-align:center; color:var(--ink-soft); padding:40px 20px; font-size:.9rem; display:none;}
   .empty.show{display:block;}
+
+  .key{
+    margin:10px 16px 4px; padding:10px 14px; background:var(--accent-soft); border-radius:10px;
+    font-size:.8rem; color:var(--ink); line-height:1.5;
+  }
 
   footer{padding:24px 20px 0; font-size:.75rem; color:var(--ink-soft); text-align:center; line-height:1.6;}
   footer a{color:var(--accent);}
@@ -77,238 +83,240 @@
 <div class="wrap">
 
 <header>
-  <h1>Pocket cheat sheet — TS Summer Party</h1>
-  <p class="sub">32 priority names, ranked. Type to search — works fully offline.</p>
+  <h1>👀 Who to talk to tonight</h1>
+  <p class="sub">36 people worth knowing at this party, easiest-to-act-on first. Search a name or a word like "money" or "press" below.</p>
   <div class="searchbar">
-    <input id="q" type="text" inputmode="search" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search a name, company or topic…">
+    <input id="q" type="text" inputmode="search" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search a name or topic…">
   </div>
   <div class="filters">
     <button class="active" data-f="all">All (36)</button>
-    <button data-f="t1">Tier 1 (10)</button>
-    <button data-f="t2">Tier 2 (12)</button>
-    <button data-f="t3">Tier 3 (10)</button>
-    <button data-f="flag">Verify (4)</button>
+    <button data-f="t1">Must-meet (10)</button>
+    <button data-f="t2">Good meet (12)</button>
+    <button data-f="t3">Say hi (10)</button>
+    <button data-f="flag">Double-check (4)</button>
   </div>
 </header>
 
 <p class="count" id="count">Showing 36 of 36</p>
 
+<div class="key">🎯 = trade/government · 🏢 = business owner · 💰 = money &amp; wealth · 📰 = press · 🎨 = creative/arts · ⚖️ = lawyer</div>
+
 <div class="list" id="list">
 
-<div class="card t1" data-tier="t1" data-text="jonathan badyal trafalgar strategy india practice partner lead">
-  <div class="top"><span class="name">1. Jonathan Badyal</span><span class="badge">Tier 1</span></div>
-  <div class="role">Partner, Trafalgar Strategy — leads their India practice</div>
-  <div class="hook">Ask what Trafalgar's India clients need as the trade deal takes effect — he's building this practice right now.</div>
+<div class="card t1" data-tier="t1" data-text="jonathan badyal trafalgar strategy india practice partner host">
+  <div class="top"><span class="name"><span class="emoji">🎯</span>1. Jonathan Badyal</span><span class="badge">Must-meet</span></div>
+  <div class="role">Runs the India team at Trafalgar Strategy — the company throwing tonight's party.</div>
+  <div class="hook">They just built a whole new India team. Ask what gap they're trying to fill — creative might be it.</div>
 </div>
 
-<div class="card t1" data-tier="t1" data-text="ani kaprekar senior counsel india tech india advocates trafalgar">
-  <div class="top"><span class="name">2. Ani Kaprekar</span><span class="badge">Tier 1</span></div>
-  <div class="role">Senior Counsel, India, Trafalgar Strategy / Co-founder, Tech India Advocates</div>
-  <div class="hook">Newly appointed for this exact remit — market entry, culture, creativity. Pitch Roll Dot as a delivery partner for the creative side.</div>
+<div class="card t1" data-tier="t1" data-text="ani kaprekar tech india advocates trafalgar india expert">
+  <div class="top"><span class="name"><span class="emoji">🎯</span>2. Ani Kaprekar</span><span class="badge">Must-meet</span></div>
+  <div class="role">Just hired by the party host as their India expert.</div>
+  <div class="hook">Brand new job, same mission as you — India, business, culture, creativity. Introduce Roll Dot as someone who could help deliver that.</div>
 </div>
 
-<div class="card t1" data-tier="t1" data-text="shehla hasan cii confederation indian industry trade body">
-  <div class="top"><span class="name">3. Shehla Hasan</span><span class="badge">Tier 1</span></div>
-  <div class="role">Director &amp; Head – UK, Confederation of Indian Industry (CII)</div>
-  <div class="hook">15+ years running both sides of the corridor. Ask about CII's UK-India Women's Leadership Network and current member priorities.</div>
+<div class="card t1" data-tier="t1" data-text="shehla hasan cii confederation indian industry trade body india uk">
+  <div class="top"><span class="name"><span class="emoji">🎯</span>3. Shehla Hasan</span><span class="badge">Must-meet</span></div>
+  <div class="role">Runs the UK office of CII — basically India's biggest business club, like India's version of the CBI.</div>
+  <div class="hook">She knows everyone doing business between India and the UK. Ask who in her network needs help telling their story.</div>
 </div>
 
-<div class="card t1" data-tier="t1" data-text="oliver kaye india global forum uk india future forum gap calvin klein lenskart">
-  <div class="top"><span class="name">4. Oliver Kaye</span><span class="badge">Tier 1</span></div>
-  <div class="role">Chief Business Officer, India Global Forum / CEO, UK India Future Forum</div>
-  <div class="hook">Took GAP and Calvin Klein into India. He's done in reverse what Tejali wants to do — ask what actually worked.</div>
+<div class="card t1" data-tier="t1" data-text="oliver kaye india global forum gap calvin klein lenskart">
+  <div class="top"><span class="name"><span class="emoji">🎯</span>4. Oliver Kaye</span><span class="badge">Must-meet</span></div>
+  <div class="role">His whole job is connecting UK and India businesses. He personally brought GAP and Calvin Klein into India.</div>
+  <div class="hook">Ask what actually worked when he adapted Western brands for India — same problem you're solving, just backwards.</div>
 </div>
 
-<div class="card t1" data-tier="t1" data-text="priya guha ficci uk council chair ukri">
-  <div class="top"><span class="name">5. Priya Guha MBE</span><span class="badge">Tier 1</span></div>
-  <div class="role">Chair, FICCI UK Council; Board, UKRI</div>
-  <div class="hook">Publicly welcomed the UK-India FTA as incoming Chair. Ask how she sees creative/brand services fitting the corridor.</div>
+<div class="card t1" data-tier="t1" data-text="priya guha ficci uk council chair trade deal">
+  <div class="top"><span class="name"><span class="emoji">🎯</span>5. Priya Guha MBE</span><span class="badge">Must-meet</span></div>
+  <div class="role">Chair of the main India-UK trade group in Britain (FICCI UK).</div>
+  <div class="hook">Ask how the new UK-India trade deal (it just kicked in) changes things for small creative businesses like Roll Dot.</div>
 </div>
 
-<div class="card t1" data-tier="t1" data-text="munni trivedi indigo cpo creative process outsourcing mumbai london">
-  <div class="top"><span class="name">6. Munni Trivedi</span><span class="badge">Tier 1</span></div>
-  <div class="role">Co-founder &amp; MD, Indigo CPO (Creative Process Outsourcing)</div>
-  <div class="hook">Runs a Mumbai–London creative outsourcing operation — closest existing parallel to Roll Dot's ambition. Compare notes directly.</div>
+<div class="card t1" data-tier="t1" data-text="munni trivedi indigo cpo mumbai london creative outsourcing">
+  <div class="top"><span class="name"><span class="emoji">🏢</span>6. Munni Trivedi</span><span class="badge">Must-meet</span></div>
+  <div class="role">Runs a company that already does what you want to do: creative work split between Mumbai and London.</div>
+  <div class="hook">She's basically already running your business model. Compare notes — what worked, what didn't.</div>
 </div>
 
-<div class="card t1" data-tier="t1" data-text="philip bouverat jcb ukibc uk india business council">
-  <div class="top"><span class="name">7. Philip Bouverat</span><span class="badge">Tier 1</span></div>
-  <div class="role">Director, Global External Affairs, JCB; founding member, UK India Business Council</div>
-  <div class="hook">20+ years on JCB's India strategy. Ask about UKIBC's interest in creative/brand partnerships for India-UK trade.</div>
+<div class="card t1" data-tier="t1" data-text="philip bouverat jcb diggers india ukibc">
+  <div class="top"><span class="name"><span class="emoji">🏢</span>7. Philip Bouverat</span><span class="badge">Must-meet</span></div>
+  <div class="role">Handles JCB's (yes, the yellow diggers) relationship with India — they've built and sold there for decades.</div>
+  <div class="hook">A textbook British brand that's huge in India. Ask if they've ever wanted creative/branding help on that side.</div>
 </div>
 
-<div class="card t1" data-tier="t1" data-text="shanay jhaveri barbican head of visual arts mumbai map bengaluru">
-  <div class="top"><span class="name">8. Shanay Jhaveri</span><span class="badge">Tier 1</span></div>
-  <div class="role">Head of Visual Arts, Barbican Centre</div>
-  <div class="hook">Mumbai-born, first non-British Head of Visual Arts at the Barbican, active link to MAP Bengaluru.</div>
+<div class="card t1" data-tier="t1" data-text="shanay jhaveri barbican arts mumbai london">
+  <div class="top"><span class="name"><span class="emoji">🎨</span>8. Shanay Jhaveri</span><span class="badge">Must-meet</span></div>
+  <div class="role">Runs the art programme at the Barbican (a major London arts centre) — he's from Mumbai.</div>
+  <div class="hook">Genuinely bridges both worlds. Great for creative credibility and India-UK arts connections.</div>
 </div>
 
-<div class="card t1" data-tier="t1" data-text="rashmi singh ficci europe director jio tata teleservices">
-  <div class="top"><span class="name">9. Rashmi Singh</span><span class="badge">Tier 1</span></div>
-  <div class="role">Director / Head of Europe, FICCI</div>
-  <div class="hook">Ex-Jio, ex-Tata Teleservices. Ask what she saw work in brand-building from inside a major Indian conglomerate.</div>
+<div class="card t1" data-tier="t1" data-text="rashmi singh ficci europe jio tata marketing">
+  <div class="top"><span class="name"><span class="emoji">🎯</span>9. Rashmi Singh</span><span class="badge">Must-meet</span></div>
+  <div class="role">Runs the trade group's Europe office — used to work in marketing at Jio and Tata (two huge Indian companies).</div>
+  <div class="hook">She's seen brand-building from inside big Indian companies. Ask what she saw actually work.</div>
 </div>
 
-<div class="card t1" data-tier="t1" data-text="vishal aggarwal head of india desk albertson solicitors">
-  <div class="top"><span class="name">10. Vishal Aggarwal</span><span class="badge">Tier 1</span></div>
-  <div class="role">Head of India Desk, Albertson Solicitors</div>
-  <div class="hook">Triple-qualified (England/India/Ireland). A referral node for Indian companies setting up UK entities.</div>
+<div class="card t1" data-tier="t1" data-text="vishal aggarwal india desk lawyer solicitors">
+  <div class="top"><span class="name"><span class="emoji">⚖️</span>10. Vishal Aggarwal</span><span class="badge">Must-meet</span></div>
+  <div class="role">A lawyer whose whole job is helping Indian companies set up in the UK, and British companies set up in India.</div>
+  <div class="hook">Not a client — but he meets your future clients before you do. Good person to know.</div>
 </div>
 
-<div class="card t2" data-tier="t2" data-text="taj phull huntsman savile row managing director menswear heritage">
-  <div class="top"><span class="name">11. Taj Phull</span><span class="badge">Tier 2</span></div>
-  <div class="role">Managing Director, Huntsman Savile Row</div>
-  <div class="hook">Leading a heritage British brand through ready-to-wear reinvention for younger, international (incl. Indian HNW) customers.</div>
+<div class="card t2" data-tier="t2" data-text="taj phull huntsman savile row tailor menswear posh">
+  <div class="top"><span class="name"><span class="emoji">🏢</span>11. Taj Phull</span><span class="badge">Good meet</span></div>
+  <div class="role">Runs Huntsman — a very old, very posh Savile Row tailor (think £5,000+ suits).</div>
+  <div class="hook">They're trying to feel more modern and reach younger, international (including Indian) customers. Ask how that's going — could be a real client conversation.</div>
 </div>
 
-<div class="card t2" data-tier="t2" data-text="tessa tysome here we flo marketing director diageo pepsico nike fmcg beverage">
-  <div class="top"><span class="name">12. Tessa Tysome</span><span class="badge">Tier 2</span></div>
-  <div class="role">Marketing Director, Here We Flo</div>
-  <div class="hook">Ex-Diageo, ex-PepsiCo, ex-Nike. Ask what translates from big-beverage brand-building to an Indian alcobev brand entering the UK.</div>
+<div class="card t2" data-tier="t2" data-text="tessa tysome here we flo marketing diageo pepsico nike drinks">
+  <div class="top"><span class="name"><span class="emoji">🏢</span>12. Tessa Tysome</span><span class="badge">Good meet</span></div>
+  <div class="role">Marketing director for a UK period-care brand — but she used to build brands at Diageo, Pepsi and Nike.</div>
+  <div class="hook">Ask what she learned building big drinks brands. Directly relevant — Roll Dot already does alcohol brands.</div>
 </div>
 
-<div class="card t2" data-tier="t2" data-text="jenna zhang sipzen founder functional drinks beverage">
-  <div class="top"><span class="name">13. Jenna Zhang</span><span class="badge">Tier 2</span></div>
-  <div class="role">Founder, SipZen (functional drinks)</div>
-  <div class="hook">Early-stage founder building brand positioning right now — a live prospect, direct beverage-category fit.</div>
+<div class="card t2" data-tier="t2" data-text="jenna zhang sipzen founder new drinks brand">
+  <div class="top"><span class="name"><span class="emoji">🏢</span>13. Jenna Zhang</span><span class="badge">Good meet</span></div>
+  <div class="role">Founder of a small, new UK drinks brand.</div>
+  <div class="hook">Early enough in her journey that she might actually need branding help right now.</div>
 </div>
 
-<div class="card t2" data-tier="t2" data-text="anmol goel gacs family office wealth uk us india">
-  <div class="top"><span class="name">14. Anmol Goel</span><span class="badge">Tier 2</span></div>
-  <div class="role">CEO, GACS Family Office</div>
-  <div class="hook">Positions GACS as a UK/US/India family-office connector. Treat AUM figures with caution; the network angle is real.</div>
+<div class="card t2" data-tier="t2" data-text="anmol goel gacs family office wealthy money">
+  <div class="top"><span class="name"><span class="emoji">💰</span>14. Anmol Goel</span><span class="badge">Good meet</span></div>
+  <div class="role">Runs a company that manages money for a handful of very rich families — across the UK, US and India.</div>
+  <div class="hook">Good for meeting wealthy people who might invest in or start a brand. Take his own numbers with a grain of salt — a lot of what's public about his firm is self-reported.</div>
 </div>
 
-<div class="card t2" data-tier="t2" data-text="niraj shah efg private bank wealth hnw india">
-  <div class="top"><span class="name">15. Niraj Shah</span><span class="badge">Tier 2</span></div>
-  <div class="role">Managing Director, EFG Private Bank</div>
-  <div class="hook">His HNW/UHNW book explicitly includes India. Ask about the India-linked families he covers.</div>
+<div class="card t2" data-tier="t2" data-text="niraj shah efg private bank wealthy hnw india">
+  <div class="top"><span class="name"><span class="emoji">💰</span>15. Niraj Shah</span><span class="badge">Good meet</span></div>
+  <div class="role">A private banker — looks after the money of very wealthy families, including some Indian ones.</div>
+  <div class="hook">Ask if any of his wealthy Indian clients own businesses that could use branding help.</div>
 </div>
 
-<div class="card t2" data-tier="t2" data-text="dhananjay mungale mahindra chairman ned board india companies">
-  <div class="top"><span class="name">16. Dhananjay Mungale</span><span class="badge">Tier 2</span></div>
-  <div class="role">Chairman, Mahindra &amp; Mahindra Financial Services; NED on multiple Indian companies</div>
-  <div class="hook">Deep governance ties across the Mahindra group. A finance figure, not a marketing buyer — but a serious door-opener.</div>
+<div class="card t2" data-tier="t2" data-text="dhananjay mungale mahindra board director companies">
+  <div class="top"><span class="name"><span class="emoji">💰</span>16. Dhananjay Mungale</span><span class="badge">Good meet</span></div>
+  <div class="role">Sits on the boards of several big Indian companies, including Mahindra (cars, tractors, and more).</div>
+  <div class="hook">Not a marketing person himself, but knows everyone who is. A door-opener, not a direct client.</div>
 </div>
 
-<div class="card t2" data-tier="t2" data-text="jay tahasildar mercurius it founder managing director">
-  <div class="top"><span class="name">17. Jay Tahasildar</span><span class="badge">Tier 2</span></div>
-  <div class="role">Founder &amp; MD, Mercurius IT</div>
-  <div class="hook">20 years building UK credibility as an Indian-founded firm — ask how he did it.</div>
+<div class="card t2" data-tier="t2" data-text="jay tahasildar mercurius it founder">
+  <div class="top"><span class="name"><span class="emoji">🏢</span>17. Jay Tahasildar</span><span class="badge">Good meet</span></div>
+  <div class="role">Started an IT company 20 years ago — Indian-founded, based in the UK.</div>
+  <div class="hook">Ask how he built trust as an Indian-founded business in Britain. Useful lessons, even outside tech.</div>
 </div>
 
-<div class="card t2" data-tier="t2" data-text="debapratim de deloitte uk chief economist">
-  <div class="top"><span class="name">18. Debapratim De</span><span class="badge">Tier 2</span></div>
-  <div class="role">Chief Economist, Deloitte UK (appointed 01-06-2026)</div>
-  <div class="hook">Congratulate him on the new role, then ask what he's seeing in UK-India trade flows post-FTA.</div>
+<div class="card t2" data-tier="t2" data-text="debapratim de deloitte uk economist">
+  <div class="top"><span class="name"><span class="emoji">📊</span>18. Debapratim De</span><span class="badge">Good meet</span></div>
+  <div class="role">Deloitte's new UK chief number-cruncher (economist) — got the job a few weeks ago.</div>
+  <div class="hook">Congratulate him, then ask what he's seeing in trade between the UK and India right now.</div>
 </div>
 
-<div class="card t2" data-tier="t2" data-text="prashant hanmantgad ph7 global services wns hexaware">
-  <div class="top"><span class="name">19. Prashant Hanmantgad</span><span class="badge">Tier 2</span></div>
-  <div class="role">CEO, PH7 Global Services (founded April 2026)</div>
-  <div class="hook">Ex-WNS/Hexaware. Brand new venture — may well need brand identity work himself.</div>
+<div class="card t2" data-tier="t2" data-text="prashant hanmantgad ph7 global services new company founder">
+  <div class="top"><span class="name"><span class="emoji">🏢</span>19. Prashant Hanmantgad</span><span class="badge">Good meet</span></div>
+  <div class="role">Just started his own company a few months ago, after years running outsourcing/IT businesses.</div>
+  <div class="hook">Brand new business — he might need branding help himself.</div>
 </div>
 
-<div class="card t2" data-tier="t2" data-text="mandeep kaur virdee kaurmaxwell founder ceo law british asian">
-  <div class="top"><span class="name">20. Mandeep Kaur Virdee</span><span class="badge">Tier 2</span></div>
-  <div class="role">Founder &amp; CEO, KaurMaxwell</div>
-  <div class="hook">Prominent British-Asian founder and litigator — well-connected into other British-Asian business networks.</div>
+<div class="card t2" data-tier="t2" data-text="mandeep kaur virdee kaurmaxwell lawyer founder british asian">
+  <div class="top"><span class="name"><span class="emoji">⚖️</span>20. Mandeep Kaur Virdee</span><span class="badge">Good meet</span></div>
+  <div class="role">Runs her own law firm — well known and well connected in British-Asian business circles.</div>
+  <div class="hook">A good networker to know, even if she's not a direct client herself.</div>
 </div>
 
-<div class="card t2" data-tier="t2" data-text="bianca wilson brandsmiths brand ip commercial law">
-  <div class="top"><span class="name">21. Bianca Wilson</span><span class="badge">Tier 2</span></div>
-  <div class="role">Partner &amp; Head of Commercial, Brandsmiths</div>
-  <div class="hook">Structures brand/IP deals for a living — a strong referral partner when clients need legal alongside creative.</div>
+<div class="card t2" data-tier="t2" data-text="bianca wilson brandsmiths brand deals lawyer">
+  <div class="top"><span class="name"><span class="emoji">⚖️</span>21. Bianca Wilson</span><span class="badge">Good meet</span></div>
+  <div class="role">A lawyer who specialises in brand deals and licensing.</div>
+  <div class="hook">If a client ever needs legal help alongside creative work, she's a good person to team up with.</div>
 </div>
 
-<div class="card t2" data-tier="t2" data-text="victoria pigott mishcon private hnw family business reputation">
-  <div class="top"><span class="name">22. Victoria Pigott</span><span class="badge">Tier 2</span></div>
-  <div class="role">Partner &amp; Chair, Mishcon Private</div>
-  <div class="hook">HNW/family-business disputes and reputation work — relevant if a client's cross-border launch runs into trouble.</div>
+<div class="card t2" data-tier="t2" data-text="victoria pigott mishcon private wealthy families lawyer">
+  <div class="top"><span class="name"><span class="emoji">⚖️</span>22. Victoria Pigott</span><span class="badge">Good meet</span></div>
+  <div class="role">A top lawyer for very wealthy families and family businesses — handles disputes and reputation issues.</div>
+  <div class="hook">Good to know in case a client's family business hits trouble mid-rebrand.</div>
 </div>
 
-<div class="card t3" data-tier="t3" data-text="shailesh solanki asian media group eastern eye executive editor press">
-  <div class="top"><span class="name">23. Shailesh Solanki</span><span class="badge">Tier 3</span></div>
-  <div class="role">Executive Editor, Asian Media Group</div>
-  <div class="hook">Runs Britain's largest Asian publishing house — a direct route to diaspora press coverage.</div>
+<div class="card t3" data-tier="t3" data-text="shailesh solanki asian media group eastern eye press">
+  <div class="top"><span class="name"><span class="emoji">📰</span>23. Shailesh Solanki</span><span class="badge">Say hi</span></div>
+  <div class="role">Runs the biggest British-Asian news company — owns Eastern Eye, Garavi Gujarat and others.</div>
+  <div class="hook">If you want press reaching British-Indian audiences, he's the person.</div>
 </div>
 
-<div class="card t3" data-tier="t3" data-text="amit roy eastern eye writer columnist">
-  <div class="top"><span class="name">24. Amit Roy</span><span class="badge">Tier 3</span></div>
-  <div class="role">Writer/columnist, Eastern Eye</div>
-  <div class="hook">Decades of India economic reporting. Note: "Editor at Large" title unconfirmed — ask his current role.</div>
+<div class="card t3" data-tier="t3" data-text="amit roy eastern eye journalist writer">
+  <div class="top"><span class="name"><span class="emoji">📰</span>24. Amit Roy</span><span class="badge">Say hi</span></div>
+  <div class="role">Veteran journalist, writes for the British-Asian paper Eastern Eye.</div>
+  <div class="hook">Knows India-UK business stories inside out.</div>
 </div>
 
-<div class="card t3" data-tier="t3" data-text="aditi khanna press trust of india pti correspondent">
-  <div class="top"><span class="name">25. Aditi Khanna</span><span class="badge">Tier 3</span></div>
-  <div class="role">Senior Correspondent, Press Trust of India, London</div>
-  <div class="hook">PTI is India's largest wire service — her filings republish across every major Indian outlet.</div>
+<div class="card t3" data-tier="t3" data-text="aditi khanna press trust of india pti wire service">
+  <div class="top"><span class="name"><span class="emoji">📰</span>25. Aditi Khanna</span><span class="badge">Say hi</span></div>
+  <div class="role">London reporter for India's biggest news wire — her stories get picked up by almost every Indian newspaper.</div>
+  <div class="hook">One story with her reaches all of India's press at once.</div>
 </div>
 
-<div class="card t3" data-tier="t3" data-text="nisha pillai broadcaster moderator bbc host">
-  <div class="top"><span class="name">26. Nisha Pillai</span><span class="badge">Tier 3</span></div>
-  <div class="role">Broadcaster / moderator, ex-BBC</div>
-  <div class="hook">Natural moderator/host for any India-UK business launch event you stage.</div>
+<div class="card t3" data-tier="t3" data-text="nisha pillai broadcaster bbc host moderator">
+  <div class="top"><span class="name"><span class="emoji">🎨</span>26. Nisha Pillai</span><span class="badge">Say hi</span></div>
+  <div class="role">Former BBC World News anchor, born in India, now hosts/moderates business events.</div>
+  <div class="hook">Would make a great host if you ever run a UK-India business event.</div>
 </div>
 
-<div class="card t3" data-tier="t3" data-text="ajay chhabra nutkhut london mela south asian festival">
-  <div class="top"><span class="name">27. Ajay Chhabra</span><span class="badge">Tier 3</span></div>
-  <div class="role">CEO/Co-Artistic Director, Nutkhut</div>
-  <div class="hook">Founded the London Mela — Europe's largest South Asian festival. Potential activation platform.</div>
+<div class="card t3" data-tier="t3" data-text="ajay chhabra nutkhut london mela festival south asian">
+  <div class="top"><span class="name"><span class="emoji">🎨</span>27. Ajay Chhabra</span><span class="badge">Say hi</span></div>
+  <div class="role">Runs the company behind the London Mela — Europe's biggest South Asian festival.</div>
+  <div class="hook">A real venue if you ever want to launch something in front of a big South Asian audience.</div>
 </div>
 
-<div class="card t3" data-tier="t3" data-text="premila puri bafta connect producer be kind mumbai">
-  <div class="top"><span class="name">28. Premila Puri</span><span class="badge">Tier 3</span></div>
-  <div class="role">Producer, Be Kind Productions; BAFTA Connect</div>
-  <div class="hook">Mumbai-born, London-based producer active in British Asian creative/entertainment circles.</div>
+<div class="card t3" data-tier="t3" data-text="premila puri bafta connect producer mumbai film">
+  <div class="top"><span class="name"><span class="emoji">🎨</span>28. Premila Puri</span><span class="badge">Say hi</span></div>
+  <div class="role">Film producer from Mumbai, now based in London, plugged into the British film/entertainment world.</div>
+  <div class="hook">A good creative contact with a foot in both cities.</div>
 </div>
 
-<div class="card t3" data-tier="t3" data-text="chila burman artist bollywood hindu iconography">
-  <div class="top"><span class="name">29. Chila Burman MBE</span><span class="badge">Tier 3</span></div>
-  <div class="role">Artist</div>
-  <div class="hook">Blends Bollywood/Hindu iconography with British visual culture — real conversation, not just a prestige nod.</div>
+<div class="card t3" data-tier="t3" data-text="chila burman artist bollywood british mbe">
+  <div class="top"><span class="name"><span class="emoji">🎨</span>29. Chila Burman MBE</span><span class="badge">Say hi</span></div>
+  <div class="role">Well-known British artist (Punjabi heritage) — famous for mixing Bollywood imagery with British art, including Selfridges' Christmas windows.</div>
+  <div class="hook">Exactly your aesthetic world. Worth a real conversation, not just a hello.</div>
 </div>
 
-<div class="card t3" data-tier="t3" data-text="osman yousefzada artist writer billboard campaign">
-  <div class="top"><span class="name">30. Osman Yousefzada</span><span class="badge">Tier 3</span></div>
-  <div class="role">Artist &amp; writer</div>
-  <div class="hook">His "More Immigrants Please" billboard campaign is a concrete example of art-as-brand-messaging.</div>
+<div class="card t3" data-tier="t3" data-text="osman yousefzada artist billboard campaign immigration">
+  <div class="top"><span class="name"><span class="emoji">🎨</span>30. Osman Yousefzada</span><span class="badge">Say hi</span></div>
+  <div class="role">Artist known for a huge UK billboard campaign about immigration.</div>
+  <div class="hook">Great example of art used as public messaging — good if you ever want to talk campaign ideas.</div>
 </div>
 
-<div class="card t3" data-tier="t3" data-text="hussain manawer poet author curriculum">
-  <div class="top"><span class="name">31. Hussain Manawer</span><span class="badge">Tier 3</span></div>
-  <div class="role">Poet/author</div>
-  <div class="hook">Now in the UK national school curriculum — reach well beyond diaspora spaces.</div>
+<div class="card t3" data-tier="t3" data-text="hussain manawer poet school curriculum">
+  <div class="top"><span class="name"><span class="emoji">🎨</span>31. Hussain Manawer</span><span class="badge">Say hi</span></div>
+  <div class="role">Poet — his work is now taught in UK schools.</div>
+  <div class="hook">Reaches way beyond the usual "diaspora" crowd, into mainstream Britain.</div>
 </div>
 
-<div class="card t3" data-tier="t3" data-text="hamna mariyam khan high commission of india diplomat">
-  <div class="top"><span class="name">32. Hamna Mariyam Khan</span><span class="badge">Tier 3</span></div>
-  <div class="role">Indian Foreign Service officer, High Commission of India, London</div>
-  <div class="hook">Working diplomat — ask which desk she currently covers.</div>
+<div class="card t3" data-tier="t3" data-text="hamna mariyam khan indian high commission embassy diplomat">
+  <div class="top"><span class="name"><span class="emoji">🎯</span>32. Hamna Mariyam Khan</span><span class="badge">Say hi</span></div>
+  <div class="role">Works at the Indian government's embassy office in London.</div>
+  <div class="hook">A good informal government contact — ask what she actually works on day to day.</div>
 </div>
 
 <div class="card flag" data-tier="flag" data-text="isha jain india global forum unverified common name">
-  <div class="top"><span class="name">⚑ Isha Jain</span><span class="badge">Verify</span></div>
-  <div class="role">Listed: India Global Forum</div>
-  <div class="hook">Could not verify — very common name, no confirmed match found. Confirm identity before relying on this.</div>
+  <div class="top"><span class="name">⚠️ Isha Jain</span><span class="badge">Double-check</span></div>
+  <div class="role">Guest list says: India Global Forum.</div>
+  <div class="hook">We couldn't confirm who this actually is — it's a very common name. Just ask her directly what she does.</div>
 </div>
 
-<div class="card flag" data-tier="flag" data-text="louise oflynn great campaign cabinet office unverified">
-  <div class="top"><span class="name">⚑ Louise O'Flynn</span><span class="badge">Verify</span></div>
-  <div class="role">Listed: GREAT Campaign, Cabinet Office</div>
-  <div class="hook">No public record found tying this name to the role listed. Ask her directly what she does.</div>
+<div class="card flag" data-tier="flag" data-text="louise oflynn great campaign government unverified">
+  <div class="top"><span class="name">⚠️ Louise O'Flynn</span><span class="badge">Double-check</span></div>
+  <div class="role">Guest list says: a UK government trade role.</div>
+  <div class="hook">No record of her online matching that job. Just ask what she does when you meet her.</div>
 </div>
 
-<div class="card flag" data-tier="flag" data-text="anup ratnaparkhi state bank of india uk ribbon fintech conflicting">
-  <div class="top"><span class="name">⚑ Anup Ratnaparkhi</span><span class="badge">Verify</span></div>
-  <div class="role">Listed: State Bank of India UK</div>
-  <div class="hook">Conflicting info — may have moved to Ribbon fintech. Confirm his current role before assuming SBI UK.</div>
+<div class="card flag" data-tier="flag" data-text="anup ratnaparkhi state bank of india uk fintech conflicting job">
+  <div class="top"><span class="name">⚠️ Anup Ratnaparkhi</span><span class="badge">Double-check</span></div>
+  <div class="role">Guest list says: State Bank of India UK.</div>
+  <div class="hook">He may have switched jobs since this list was made (possibly to a fintech company). Confirm before assuming where he works.</div>
 </div>
 
-<div class="card flag" data-tier="flag" data-text="tarlok mander usaari analytics unverified no trace">
-  <div class="top"><span class="name">⚑ Tarlok Mander</span><span class="badge">Verify</span></div>
-  <div class="role">Listed: Usaari Analytics</div>
-  <div class="hook">No trace of this company found anywhere. Possibly a very small firm, or a transcription issue.</div>
+<div class="card flag" data-tier="flag" data-text="tarlok mander usaari analytics unverified no trace company">
+  <div class="top"><span class="name">⚠️ Tarlok Mander</span><span class="badge">Double-check</span></div>
+  <div class="role">Guest list says: Usaari Analytics.</div>
+  <div class="hook">We can't find this company anywhere online. Might be a tiny private firm, might be a typo — just ask.</div>
 </div>
 
 </div>
@@ -317,8 +325,8 @@
 
 <footer>
   Roll Dot Agency — internal use.<br>
-  Self-contained page: no images, fonts or scripts load from the internet, so once it's open it keeps working with no signal or in aeroplane mode.<br>
-  Full research notes: <a href="briefing.html">open the full briefing</a>.
+  Works with no signal once it's open — nothing on this page loads from the internet.<br>
+  Want the deeper research behind these picks? <a href="briefing.html">Open the full briefing</a>.
 </footer>
 
 </div>
